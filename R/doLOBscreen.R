@@ -2062,10 +2062,9 @@ screenPSpectrum = function(pseudospectrum, xsA, polarity, database, remove.iso,
           
           # before continuing, check again to see whether we have a case 6 
           # situation, then proceed accordingly
+        
           
-          if (is.na(possible.adducts.this.parent$adduct_rank[
-            possible.adducts.this.parent$adduct==
-            unlist(observed.adducts.this.parent)])) {
+          if ((any(is.na(possible.adducts.this.parent$adduct_rank[possible.adducts.this.parent$adduct == unlist(observed.adducts.this.parent)]))))  {
             
             # we have a case 6b-1x situation; we ID'd a single peak representing
             # only one good adduct for this parent compound, but we don't know 
@@ -2084,9 +2083,9 @@ screenPSpectrum = function(pseudospectrum, xsA, polarity, database, remove.iso,
             
             current_casecodes["C6b"] = 1  # note that case 6b is also true
             
-          } else if (possible.adducts.this.parent$adduct_rank[
+          } else if (any((possible.adducts.this.parent$adduct_rank[
             possible.adducts.this.parent$adduct==
-            unlist(observed.adducts.this.parent)]==1) { 
+            unlist(observed.adducts.this.parent)]==1))) { 
             
             # this is definitely a case 1 situation, proceed
             

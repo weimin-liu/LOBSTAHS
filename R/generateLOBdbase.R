@@ -817,6 +817,8 @@ runSim = function(polarity, acylRanges, oxyRanges, adductHierarchies,
           as.character(baseComponent.masses$Species_class[i]),
           IP_DAG=2,
           IP_MAG=1,
+          IP_AEG=2,
+          IP_DEG=2,
           FFA=1,
           PUA=0,
           TAG=3)
